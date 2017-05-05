@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bar Trivia</title>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Trivia Game</h1>
+    </div>
+  </div>
+
+ </div>
+  <!-- bower:css -->
+  <!-- endbower -->
+
+ <!-- inject:css -->
+  <!-- endinject -->
+</head>
+
+<body ng-controller="TriviaController as triviaCtrl">
+  <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Question </button>
+  <div class="container-fluid">
+    <div class="row">
+      <p ng-model="triviaCtrl.questions">
+        Question
+      </p>
+    </div>
+  </div>
+
+ <!-- 16:9 aspect ratio -->
+  <input type="text" ng-model="triviaCtrl.youtubeID">
+  <button ng-click="triviaCtrl.searchYou()"></button>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe width="560" height="315" ng-src="triviaCtrl.youtubeID" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+
+
+ <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- endbower -->
+  <!-- inject:js -->
+  <script src="/app/app.js"></script>
+  <script src="/app/bar.trivia.js"></script>
+  <script src="/app/trivia.factory.js"></script>
+  <script src="/trivia.controller.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>
