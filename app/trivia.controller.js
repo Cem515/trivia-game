@@ -17,20 +17,20 @@
      triviaCtrl.retrieve = function() {
         QuestionFactory
           .questionCreate()
-          .then(function(response) {
+          .then(function(data) {
               triviaCtrl.results = data;
               console.log(data);
 
-           }
+           });
 
-         }
+         } , 
 
     triviaCtrl.searchYou = function() {
        QuestionFactory
          .playVideo()
          .then(function(response){
 
-         }
+         });
     
   }
       }

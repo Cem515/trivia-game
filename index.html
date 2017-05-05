@@ -30,21 +30,20 @@
 
  <!-- 16:9 aspect ratio -->
   <input type="text" ng-model="triviaCtrl.youtubeID">
-  <button ng-click="triviaCtrl.searchYou()"></button>
+  <button ng-click="triviaCtrl.searchYou()" type= "submit" class= "btn btn-primary">Search</button>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315" ng-src="triviaCtrl.youtubeID" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" ng-ssrc="https://www.youtube.com/watch?v={{triviaCtrl.youtubeID}}" frameborder="0" allowfullscreen></iframe>
   </div>
 
 
 
  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <!-- endbower -->
+ <script src="bower_components/angular/angular.js"></script>
+ <!-- endbower -->
   <!-- inject:js -->
   <script src="/app/app.js"></script>
-  <script src="/app/bar.trivia.js"></script>
+  <script src="/app/trivia.controller.js"></script>
   <script src="/app/trivia.factory.js"></script>
-  <script src="/trivia.controller.js"></script>
   <!-- endinject -->
 </body>
 

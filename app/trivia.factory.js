@@ -5,10 +5,10 @@
     .module('app')
     .factory('QuestionFactory', QuestionFactory);
 
- QuestionFactory.$inject = [''];
+ QuestionFactory.$inject = ['$http'];
 
  /* @ngInject */
-  function QuestionFactory() {
+  function QuestionFactory($http) {
     var service = {
       questionCreate: questionCreate,
       playVideo: playVideo
