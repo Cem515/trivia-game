@@ -10,36 +10,44 @@
     </div>
   </div>
 
- </div>
+  </div>
   <!-- bower:css -->
   <!-- endbower -->
 
- <!-- inject:css -->
+  <!-- inject:css -->
   <!-- endinject -->
 </head>
 
 <body ng-controller="TriviaController as triviaCtrl">
-  <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Question </button>
+  <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Questions </button>
+  <button ng-click="triviaCtrl.questionPop()" type="submit" class="btn btn-primary"> Populate Questions </button>
+
+
+ <ul>
+    <li class="list" ng-bind="triviaCtrl.currentQuestion.question"></li>
+  </ul>
+
+  <pre>{{triviaCtrl.results| json}}</pre>
   <div class="container-fluid">
     <div class="row">
-      <p>{{triviaCtrl.results.question}}</p>
-      <pre>{{triviaCtrl.results | json}}</pre>
-      
+      <button type="submit" ng-click="triviaCtrl.next()" class="btn btn-success btn-block">Next Question</button>
+      <button type="submit" ng-click="triviaCtrl.back()" class="btn btn-danger btn-block">Previous Question</button>
     </div>
   </div>
-
- <!-- 16:9 aspect ratio -->
+ 
+   <!--16:9 aspect ratio -->
   <input type="text" ng-model="triviaCtrl.youtubeID">
-  <button ng-click="triviaCtrl.searchYou()" type= "submit" class= "btn btn-primary">Search</button>
+  <button ng-click="triviaCtrl.searchYou()" type= "submit" class= "btn btn-primaryk">Search</button>
   <div class="embed-responsive embed-responsive-16by9">
     <iframe width="560" height="315" ng-ssrc="https://www.youtube.com/watch?v={{triviaCtrl.youtubeID}}" frameborder="0" allowfullscreen></iframe>
   </div>
 
 
 
- <!-- bower:js -->
- <script src="bower_components/angular/angular.js"></script>
- <!-- endbower -->
+
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- endbower -->
   <!-- inject:js -->
   <script src="/app/app.js"></script>
   <script src="/app/trivia.controller.js"></script>
