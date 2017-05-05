@@ -22,9 +22,7 @@
   <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Question </button>
   <div class="container-fluid">
     <div class="row">
-      <p ng-model="triviaCtrl.questions">
-        Question
-      </p>
+      <p>{{triviaCtrl.results | json}}</p>
     </div>
   </div>
 

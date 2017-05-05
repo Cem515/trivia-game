@@ -19,8 +19,7 @@
           .questionCreate()
           .then(function(data) {
               triviaCtrl.results = data;
-              console.log(data);
-
+             
            });
 
          } , 
