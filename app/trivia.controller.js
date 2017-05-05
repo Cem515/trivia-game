@@ -13,6 +13,7 @@
       triviaCtrl.questions = "";
       triviaCtrl.youtubeID = "";
       triviaCtrl.results=[];
+      triviaCtrl.results.question="";
 
      triviaCtrl.retrieve = function() {
         QuestionFactory
