@@ -6,7 +6,7 @@
   <title>Bar Trivia</title>
   <div class="container">
     <div class="jumbotron">
-      <h1>Trivia Game</h1>
+      <h1>Bar Conversation Starter</h1>
     </div>
   </div>
 
@@ -14,59 +14,65 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
-
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 
-<body ng-controller="TriviaController as trinviaCtrl">
-   
-   <div id="panel1" class="panel panel-default">
-   <div class="panel-heading"> Trivia Questions </div>
-  <!-- Get/Create Questions -->
-   <div class="panel-body">
-   <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Questions </button>
-   <button ng-click="triviaCtrl.questionPop()" type="submit" class="btn btn-primary"> Populate Questions </button>
-<!-- Show Answers/Questions -->
-   <button ng-click="triviaCtrl.show = true">Answer</button>
-   <p>{{triviaCtrl.currentQuestion.question}}</p>
-   <ul>
-    <li ng-show="triviaCtrl.show">{{triviaCtrl.answers.CorrectAnswer}}</li>
-    <li ng-hide="triviaCtrl.show">{{triviaCtrl.answers.IncorrectAnswer}}</li>
-   </ul>
-   <!-- Cycle Questions -->
-   <div class="container-fluid">
-     <div class="row">
-       <button type="submit" ng-click="triviaCtrl.next()" class="btn btn-success">Next Question</button>
-       <button type="submit" ng-click="triviaCtrl.back()" class="btn btn-warning">Previous Question</button>
-  <p>{{triviaCtrl.currentIndex + 1}} out of 10</p>
-  </div>
-  </div>
-<!-- Expected Beer Info -->
- <div id"panel2" class="panel panel-default">
-  <div class="panel-heading"> Discover New Beer </div>
-  <!-- Get/Create Questions -->
-  <div class="panel-body">
-  <button type="submit" ng-click="triviaCtrl.beerInfo()" class="btn btn-info">Find Me Beer</button>
-  <button type="submit" ng-click="triviaCtrl.beerPop()" class="btn btn-info">Give Me Beer</button>
-  <p>Beer Name :{{triviaCtrl.beer.name}}</p>
-  <p>ABV%: {{triviaCtrl.beer.abv}}</p>
-  <p>Beer Style: {{triviaCtrl.beer.style}}</p>
-  <p >Description: {{triviaCtrl.beer.description}}</p>
-  <img ng-src="{{triviaCtrl.beer.label}}" alt="Not Available">
-  </div>
- </div>
-</div>
-  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <!-- endbower -->
-  <!-- inject:js -->
-  <script src="/app/app.js"></script>
-  <script src="/app/trivia.controller.js"></script>
-  <script src="/app/trivia.factory.js"></script>
-  <!-- endinject -->
+<body ng-controller="TriviaController as triviaCtrl">
+
+  <div id="panel1" class="panel panel-default">
+    <div class="panel-heading"> Trivia Questions </div>
+
+    <!-- Get/Create Questions -->
+    <div class="panel-body">
+      <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Questions </button>
+      <button ng-click="triviaCtrl.questionPop()" type="submit" class="btn btn-primary"> Populate Questions </button>
+      <button ng-click="triviaCtrl.show = true" type="submit" class="btn btn-primary">Answer</button>
+      <!-- Show Answers/Questions -->
+
+      <p>{{triviaCtrl.currentQuestion.question}}</p>
+      <ul>
+        <li>{{triviaCtrl.answers.CorrectAnswer}}</li>
+        <li ng-hide="triviaCtrl.show">{{triviaCtrl.answers.IncorrectAnswer}}</li>
+      </ul>
+
+      <!-- Cycle Questions -->
+      <div class="container-fluid">
+        <button type="submit" ng-click="triviaCtrl.next()" class="btn btn-success">Next Question</button>
+        <button type="submit" ng-click="triviaCtrl.back()" class="btn btn-danger">Previous Question</button>
+        <p>{{triviaCtrl.currentIndex + 1}} out of 10</p>
+      </div>
+    </div>
+
+    <!-- Expected Beer Info -->
+    <div id "panel2" class="panel panel-default">
+      <div class="panel-heading"> Discover New Beer </div>
+
+      <!-- Get/Create Questions -->
+      <div class="panel-body">
+        <button type="submit" ng-click="triviaCtrl.beerInfo()" class="btn btn-info">Find Me Beer</button>
+        <button type="submit" ng-click="triviaCtrl.beerPop()" class="btn btn-info">Give Me Beer</button>
+        <p>Beer Name :{{triviaCtrl.beer.name}}</p>
+        <p>ABV%: {{triviaCtrl.beer.abv}}</p>
+        <p>Beer Style: {{triviaCtrl.beer.style}}</p>
+        <p>Description: {{triviaCtrl.beer.description}}</p>
+        <img ng-src="{{triviaCtrl.beer.label}}" alt-src="No Image Available">
+      </div>
+    </div>
+
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/trivia.controller.js"></script>
+    <script src="/app/trivia.factory.js"></script>
+    <!-- endinject -->
 </body>
-</body>
-</body>
+
+
 </html>

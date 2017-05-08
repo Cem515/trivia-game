@@ -1,11 +1,30 @@
 body {
- background-image: url("http://theovertimebar.com/wp-content/uploads/2016/04/trivia_night.png");
- background-size: cover;
+    background-color: black;
+}
+li {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+}
+.panel-default > .panel-heading {
+        background-color: #d6ab1b
+}
+.container .jumbotron {
+    background-color: #d6ab1b
+}
+.panel-body {
+background-color: #e2db42
 }
 h1 {
-  text-align: center;
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
 }
-#bodyContainer {
 
+p {
+   font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+}
 
+.panel-heading {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 40px;
 }
