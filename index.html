@@ -12,6 +12,7 @@
 
   </div>
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
 
   <!-- inject:css -->
@@ -19,34 +20,45 @@
 </head>
 
 <body ng-controller="TriviaController as triviaCtrl">
+
+  <!-- Get/Create Questions -->
   <button ng-click="triviaCtrl.retrieve()" type="submit" class="btn btn-primary"> Retrieve Questions </button>
   <button ng-click="triviaCtrl.questionPop()" type="submit" class="btn btn-primary"> Populate Questions </button>
 
 
- <ul>
-    <li class="list" ng-bind="triviaCtrl.currentQuestion.question"></li>
-  </ul>
+  <!-- Show Answers/Questions -->
+  <p class="list">{{triviaCtrl.currentQuestion.question}}</p>
+  <p class="list">{{triviaCtrl.answers.CorrectAnswer}}</p>
+  <p class="list">{{triviaCtrl.answers.IncorrectAnswer}}</p>
 
-  <pre>{{triviaCtrl.results| json}}</pre>
+
+  <!-- Cycle Questions -->
+
   <div class="container-fluid">
     <div class="row">
-      <button type="submit" ng-click="triviaCtrl.next()" class="btn btn-success btn-block">Next Question</button>
-      <button type="submit" ng-click="triviaCtrl.back()" class="btn btn-danger btn-block">Previous Question</button>
+      <button type="submit" ng-click="triviaCtrl.next()" class="btn btn-success">Next Question</button>
+      <button type="submit" ng-click="triviaCtrl.back()" class="btn btn-warning">Previous Question</button>
     </div>
   </div>
- 
-   <!--16:9 aspect ratio -->
-  <input type="text" ng-model="triviaCtrl.youtubeID">
-  <button ng-click="triviaCtrl.searchYou()" type= "submit" class= "btn btn-primaryk">Search</button>
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe width="560" height="315" ng-ssrc="https://www.youtube.com/watch?v={{triviaCtrl.youtubeID}}" frameborder="0" allowfullscreen></iframe>
-  </div>
 
+  <p>{{triviaCtrl.currentIndex}}</p>
 
+  <!-- Expected Beer Info -->
 
+  <button type="submit" ng-click="triviaCtrl.beerInfo()" class="btn btn-info">Find Me Beer</button>
+  <button type="submit" ng-click="triviaCtrl.beerPop()" class="btn btn-info">Give Me Beer</button>
+  <p>{{triviaCtrl.beer.name}}</p>
+  <p>{{triviaCtrl.beer.abv}}</p>
+  <p>{{triviaCtrl.beer.style}}</p>
+  <p>{{triviaCtrl.beer.description}}</p>
+
+  <!--<img src="triviaCtrl.beerInfo.label">-->
+
+  <pre>{{triviaCtrl.beerResults|json}}</pre>
 
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <!-- endbower -->
   <!-- inject:js -->
   <script src="/app/app.js"></script>
