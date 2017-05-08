@@ -19,6 +19,7 @@
     //Next and Back Buttons
 
     triviaCtrl.next = function () {
+      triviaCtrl.show = false;
       if (triviaCtrl.currentIndex === triviaCtrl.results.length) {
         triviaCtrl.currentIndex = 0;
       } else {
@@ -27,6 +28,7 @@
     };
 
     triviaCtrl.back = function () {
+      triviaCtrl.show = false;
       if (triviaCtrl.currentIndex === triviaCtrl.results.length) {
         triviaCtrl.currentIndex = 0
       } else {
@@ -38,10 +40,12 @@
 
     triviaCtrl.retrieve = function () {
       QuestionFactory
+
         .questionCreate()
         .then(function (data) {
           triviaCtrl.results = data.results;
         });
+      triviaCtrl.show = false;
     }
 
     //Populate Questions
@@ -72,11 +76,11 @@
 
       triviaCtrl.beerPop = function () {
         triviaCtrl.beer = {
-          name: (triviaCtrl.beerResults[0].nameDisplay),
-          abv: (triviaCtrl.beerResults[0].abv),
-          style: (triviaCtrl.beerResults[0].shortName),
-          description: (triviaCtrl.beerResults[0].description),
-          // label: (triviaCtrl.beerResults.labels.large),
+          name: triviaCtrl.beerResults.nameDisplay,
+          abv: triviaCtrl.beerResults.abv,
+          style: triviaCtrl.beerResults.shortName,
+          description: triviaCtrl.beerResults.description,
+          label: triviaCtrl.beerResults.labels.large,
         }
 
       }

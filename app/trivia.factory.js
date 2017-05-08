@@ -27,7 +27,7 @@
     function randomBeer(beer) {
       return $http.get("http://api.brewerydb.com/v2/beer/random?key=cf772398dc53cc03dcd9241d3d9b3cff&format=json")
         .then(function (response) {
-          return response.data
+          return response.data.data;
 
         })
 
